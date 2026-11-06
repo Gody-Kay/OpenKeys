@@ -30,13 +30,17 @@ def fetch(lib: dict, dest_root: pathlib.Path, dry: bool, licenses_text: str) -> 
     if name not in licenses_text:
         print(f"[skip] {name}: not logged in content/LICENSES.md")
         return False
+    if not lib.get("sha256"):
+        print(f"[skip] {name}: no sha256 in sources.json (use --hash FILE)")
+        return False
     dest = dest_root / lib.get("dest", name)
     print(f"[{'plan' if dry else 'get '}] {name} -> {dest}")
     if dry:
         return True
     dest.mkdir(parents=True, exist_ok=True)
     fname = dest / pathlib.Path(lib["url"]).name
-    urllib.request.urlretrieve(lib["url"], fname)
+    if not (fname.exists() and sha256(fname) == lib["sha256"]):
+        urllib.request.urlretrieve(lib["url"], fname)
     want = lib.get("sha256")
     if want and sha256(fname) != want:
         fname.unlink()
@@ -44,6 +48,11 @@ def fetch(lib: dict, dest_root: pathlib.Path, dry: bool, licenses_text: str) -> 
         return False
     if fname.suffix == ".zip":
         with zipfile.ZipFile(fname) as z:
+            base = dest.resolve()
+            for m in z.namelist():
+                if not (dest / m).resolve().is_relative_to(base):
+                    print(f"[fail] {name}: unsafe path in zip: {m}")
+                    return False
             z.extractall(dest)
     return True
 
@@ -52,8 +61,12 @@ def main() -> int:
     ap.add_argument("--list", action="store_true")
     ap.add_argument("--dry-run", action="store_true")
     ap.add_argument("--only")
+    ap.add_argument("--hash", help="print sha256 of a local file, then exit")
     ap.add_argument("--dest", default=str(ROOT / "content" / "sounds"))
     a = ap.parse_args()
+    if a.hash:
+        print(sha256(pathlib.Path(a.hash)))
+        return 0
 
     libs = json.loads((ROOT / "content" / "sources.json").read_text(encoding="utf-8")).get("libraries", [])
     if a.only:

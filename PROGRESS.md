@@ -25,3 +25,4 @@ Phase 0 not started. No code yet.
 (none)
 - [C] CI green on GitHub (Linux/Windows/Mac) after first push. Phase 0 lane C complete.
 - [C] 2026-11-06 16:14 HANDOFF: lane C Phase 0 done, CI green, all branches pushed. Next session to start: A (Engine). Then B (UI). C idle until requests arrive.
+- [C] 2026-11-06 16:18 fetch_sounds.py hardened: sha256 required, zip path check, skip if already downloaded, --hash helper. sources.json still empty.
