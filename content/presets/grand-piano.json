@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "name": "Grand Piano",
+  "category": "Piano",
+  "tempo": 90,
+  "master": { "transpose": 0, "octaveShift": 0, "tuneHz": 440, "mono": false },
+  "parts": [
+    {
+      "id": 1, "name": "Grand Piano", "enabled": true, "color": "#4FC3F7",
+      "instrument": { "type": "sfz", "ref": "salamander/Salamander Grand Piano V3.sfz" },
+      "keyRange": { "low": 0, "high": 127 }, "velocityRange": { "low": 1, "high": 127 },
+      "velocityCurve": "normal", "volume": 0.8, "pan": 0.0,
+      "sends": { "reverb": 0.2, "delay": 0.0, "chorus": 0.0 }
+    }
+  ],
+  "scenes": [
+    { "name": "Main", "parts": { "1": { "enabled": true, "volume": 0.8 } } }
+  ]
+}

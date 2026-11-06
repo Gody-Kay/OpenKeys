@@ -28,3 +28,4 @@ Phase 0 not started. No code yet.
 - [C] 2026-11-06 16:18 fetch_sounds.py hardened: sha256 required, zip path check, skip if already downloaded, --hash helper. sources.json still empty.
 - [C] 2026-11-06 17:12 Salamander Grand Piano V3 (CC-BY-3.0) downloaded to content/sounds/salamander (gitignored), logged in LICENSES.md.
 - [C] 2026-11-06 17:14 tools/benchmark.py added; laptop specs recorded. Latency/64-voice/RAM still to measure once engine has audio.
+- [C] 2026-11-06 17:18 content/presets/grand-piano.json added (Salamander). Ref paths are relative to content/sounds/ (see DECISIONS.md). A: please confirm this resolves in the engine.

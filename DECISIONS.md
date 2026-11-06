@@ -15,3 +15,4 @@
 - D013 JUCE pinned to 8.0.4 via CMake FetchContent; fetched only once src/engine or src/app has a CMakeLists.txt (assumed).
 - D014 CI: Linux must be green; Windows and Mac jobs may fail (continue-on-error) until tested by a friend (assumed).
 - D015 Lane C tests are Python (jsonschema) registered in CTest: schema validation and licence check (assumed).
+- 2026-11-06 (C, assumed): instrument.ref is relative to content/sounds/. First preset: content/presets/grand-piano.json.
