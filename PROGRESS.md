@@ -30,3 +30,4 @@ Phase 0 not started. No code yet.
 - [C] 2026-11-06 17:14 tools/benchmark.py added; laptop specs recorded. Latency/64-voice/RAM still to measure once engine has audio.
 - [C] 2026-11-06 17:18 content/presets/grand-piano.json added (Salamander). Ref paths are relative to content/sounds/ (see DECISIONS.md). A: please confirm this resolves in the engine.
 - [C] 2026-11-06 17:20 tools/check_presets.py + ctest presets_valid added. CI still needs pip install jsonschema (pending).
+- [C] 2026-11-06 17:21 CI: added setup-python + pip install jsonschema so presets_valid runs on all 3 OS.
