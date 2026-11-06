@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "name": "Sunday Worship",
+  "category": "Church",
+  "tempo": 72,
+  "master": { "transpose": 0, "octaveShift": 0, "tuneHz": 440, "mono": false },
+  "parts": [
+    {
+      "id": 1, "name": "Grand Piano", "enabled": true, "color": "#4FC3F7",
+      "instrument": { "type": "sfz", "ref": "piano/grand.sfz" },
+      "keyRange": { "low": 0, "high": 127 }, "velocityRange": { "low": 1, "high": 127 },
+      "velocityCurve": "normal", "volume": 0.8, "pan": 0.0,
+      "sends": { "reverb": 0.25, "delay": 0.0, "chorus": 0.0 }
+    },
+    {
+      "id": 2, "name": "Warm Pad", "enabled": true, "color": "#BA68C8",
+      "instrument": { "type": "synth", "ref": "pad/warm" },
+      "keyRange": { "low": 36, "high": 96 }, "velocityRange": { "low": 1, "high": 127 },
+      "velocityCurve": "soft", "volume": 0.55, "pan": 0.1,
+      "sends": { "reverb": 0.5, "delay": 0.1, "chorus": 0.3 },
+      "inserts": [ { "type": "filter", "enabled": true, "params": { "cutoff": 0.6, "resonance": 0.2 } } ]
+    },
+    {
+      "id": 3, "name": "Strings", "enabled": false, "color": "#FFB74D",
+      "instrument": { "type": "sfz", "ref": "strings/ensemble.sfz" },
+      "keyRange": { "low": 48, "high": 108 }, "velocityRange": { "low": 1, "high": 127 },
+      "velocityCurve": "normal", "volume": 0.6, "pan": -0.1,
+      "sends": { "reverb": 0.4 }
+    },
+    {
+      "id": 4, "name": "Rhodes", "enabled": false, "color": "#81C784",
+      "instrument": { "type": "synth", "ref": "ep/suitcase" },
+      "keyRange": { "low": 28, "high": 100 }, "velocityRange": { "low": 1, "high": 127 },
+      "velocityCurve": "hard", "volume": 0.7, "pan": 0.0,
+      "sends": { "reverb": 0.2, "chorus": 0.4 },
+      "inserts": [ { "type": "tremolo", "enabled": true, "params": { "rate": 4.5, "depth": 0.3 } } ]
+    }
+  ],
+  "scenes": [
+    { "name": "Intro", "parts": { "1": { "enabled": true, "volume": 0.8 }, "2": { "enabled": true, "volume": 0.4 }, "3": { "enabled": false }, "4": { "enabled": false } } },
+    { "name": "Verse", "parts": { "1": { "enabled": true, "volume": 0.7 }, "2": { "enabled": true, "volume": 0.55 }, "4": { "enabled": true, "volume": 0.6 } } },
+    { "name": "Chorus", "parts": { "1": { "enabled": true, "volume": 0.85 }, "2": { "enabled": true, "volume": 0.65 }, "3": { "enabled": true, "volume": 0.7 } },
+      "arpeggio": { "enabled": false } }
+  ],
+  "masterKnob": {
+    "name": "Build",
+    "controller": "cc4",
+    "mappings": [
+      { "param": "part.2.volume", "min": 0.2, "max": 0.8, "curve": "exp" },
+      { "param": "part.3.volume", "min": 0.0, "max": 0.7, "curve": "linear" },
+      { "param": "part.1.sends.reverb", "min": 0.1, "max": 0.4, "curve": "s-curve" }
+    ]
+  },
+  "knobs": [
+    { "label": "Bright", "param": "part.1.filter.cutoff", "cc": 74 },
+    { "label": "Reverb", "param": "part.1.sends.reverb", "cc": 91 }
+  ],
+  "sliders": [
+    { "label": "Piano", "param": "part.1.volume" },
+    { "label": "Pad", "param": "part.2.volume" }
+  ],
+  "arpeggio": { "enabled": false, "pattern": "up", "rate": "1/16", "octaves": 2, "gate": 0.8, "parts": [2] }
+}

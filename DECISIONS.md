@@ -12,3 +12,6 @@
 - D010 V1 scope = Phases 0 to 5. Church extras, studio, arranger follow as updates.
 - D011 Unsigned installers at first (no budget); users click through the "unknown developer" warning.
 - D012 Mixer drum-processing is a SEPARATE project and repo. Do not mix code.
+- D013 JUCE pinned to 8.0.4 via CMake FetchContent; fetched only once src/engine or src/app has a CMakeLists.txt (assumed).
+- D014 CI: Linux must be green; Windows and Mac jobs may fail (continue-on-error) until tested by a friend (assumed).
+- D015 Lane C tests are Python (jsonschema) registered in CTest: schema validation and licence check (assumed).

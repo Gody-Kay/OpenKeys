@@ -1,0 +1,4 @@
+{
+  "_comment": "Each library: name, url, license, sha256 (of the downloaded file), dest (folder under content/sounds). Name must also appear in content/LICENSES.md.",
+  "libraries": []
+}

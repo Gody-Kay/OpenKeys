@@ -8,6 +8,7 @@ Phase 0 not started. No code yet.
 
 ## Log
 - [Planning] Plan, features, rules and decisions written. Next: start Phase 0.
+- [C] Phase 0 files written: CMakeLists, CI workflow, performance.schema.json + example, LICENSES.md, check_licenses.py, fetch_sounds.py skeleton. Local ctest: 2/2 pass. CI on GitHub not yet run.
 
 ## Next up
 - A: JUCE audio+MIDI skeleton, MIDI note -> sine, measure latency, draft `src/common/EngineAPI.h`
