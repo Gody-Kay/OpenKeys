@@ -4,7 +4,7 @@
 Phase 0 not started. No code yet.
 
 ## Benchmarks (record here)
-- Laptop: (fill in) | Round-trip latency: (not measured) | 64 voices CPU: (not measured) | RAM: (not measured)
+- Laptop: Intel(R) Core(TM) i5-8365U CPU @ 1.60GHz, 8 threads, 7.6 GB RAM, Linux 6.19.14+kali-amd64 | Round-trip latency: (not measured) | 64 voices CPU: (not measured) | RAM: (not measured)
 
 ## Log
 - [Planning] Plan, features, rules and decisions written. Next: start Phase 0.
@@ -27,3 +27,4 @@ Phase 0 not started. No code yet.
 - [C] 2026-11-06 16:14 HANDOFF: lane C Phase 0 done, CI green, all branches pushed. Next session to start: A (Engine). Then B (UI). C idle until requests arrive.
 - [C] 2026-11-06 16:18 fetch_sounds.py hardened: sha256 required, zip path check, skip if already downloaded, --hash helper. sources.json still empty.
 - [C] 2026-11-06 17:12 Salamander Grand Piano V3 (CC-BY-3.0) downloaded to content/sounds/salamander (gitignored), logged in LICENSES.md.
+- [C] 2026-11-06 17:14 tools/benchmark.py added; laptop specs recorded. Latency/64-voice/RAM still to measure once engine has audio.
