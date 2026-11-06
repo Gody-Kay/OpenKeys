@@ -51,3 +51,10 @@ if(OPENKEYS_BUILD_TESTS)
       WORKING_DIRECTORY ${CMAKE_SOURCE_DIR})
   endif()
 endif()
+
+# Preset validation (tools/check_presets.py). Exit 77 = skipped.
+find_package(Python3 QUIET COMPONENTS Interpreter)
+if(Python3_FOUND)
+  add_test(NAME presets_valid COMMAND ${Python3_EXECUTABLE} ${CMAKE_SOURCE_DIR}/tools/check_presets.py)
+  set_tests_properties(presets_valid PROPERTIES SKIP_RETURN_CODE 77)
+endif()
