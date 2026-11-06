@@ -12,7 +12,7 @@ Allowed for sounds: CC0, CC-BY, public domain, permissive. Never bundle Yamaha/R
 ## Sound libraries
 | Name | Licence | Source URL | Attribution needed | Notes |
 |---|---|---|---|---|
-| (none yet) | | | | Add each library here AND in content/sources.json |
+| Salamander Grand Piano V3 | CC-BY-3.0 | https://github.com/sfzinstruments/SalamanderGrandPiano | Yes: Alexander Holm, CC-BY 3.0 | Yamaha C5, 48kHz/24bit, 16 layers. Cloned commit 3382bf9. Uses SFZ v2 + ARIA extensions: test in sfizz in Phase 1. |
 
 ## Our own recordings
 Recordings made by the church's engineer are owned by the project (D008). Log each set here with date and who recorded it.
