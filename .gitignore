@@ -1,0 +1,9 @@
+build/
+cmake-build-*/
+.vscode/
+*.wav
+*.o
+*.so
+*.a
+__pycache__/
+content/sounds/
