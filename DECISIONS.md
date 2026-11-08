@@ -20,3 +20,4 @@
 - DC1 (C) Lane C tests are Python in CTest: tools/check_presets.py uses jsonschema and exits 77 (skipped) if it is missing; CI installs jsonschema.
 - DC2 (C) instrument.ref in presets is relative to content/sounds/. First preset: content/presets/grand-piano.json (Salamander Grand Piano V3, CC-BY-3.0).
 - DC3 (C) 2026-11-08 CI must pass on Linux, Windows and macOS (continue-on-error removed). The repo setting 'pin actions to SHA' was turned off.
+- 2026-11-08 (C, assumed) DC5: at the user's request this chat (lane C) wrote the Phase 0 UI draft in src/app, acting as Session B. Lives on branch ui-draft, NOT merged to main until it builds. Montage-style layout with our own names; whole screen, no scrolling (D020).
