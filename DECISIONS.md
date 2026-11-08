@@ -12,8 +12,11 @@
 - D010 V1 scope = Phases 0 to 5. Church extras, studio, arranger follow as updates.
 - D011 Unsigned installers at first (no budget); users click through the "unknown developer" warning.
 - D012 Mixer drum-processing is a SEPARATE project and repo. Do not mix code.
-- D013 JUCE pinned to 8.0.4 via CMake FetchContent; fetched only once src/engine or src/app has a CMakeLists.txt (assumed).
-- D014 CI: Linux must be green; Windows and Mac jobs may fail (continue-on-error) until tested by a friend (assumed).
-- D015 Lane C tests are Python (jsonschema) registered in CTest: schema validation and licence check (assumed).
-- 2026-11-06 (C, assumed): instrument.ref is relative to content/sounds/. First preset: content/presets/grand-piano.json.
-- 2026-11-08 (C): removed continue-on-error from ci.yml; all 3 OS were green, so all 3 must stay green.
+- D013 Phase 0 builds with no JUCE (option OPENKEYS_WITH_JUCE, default OFF; JUCE pinned 8.0.4 via FetchContent) so CI is green before lane A adds code. Lane CMakeLists are picked up automatically if present.
+- D014 `docs/performance.schema.json` is DRAFT v0 (schemaVersion 0), written by C; needs lane A sign-off before B relies on it.
+- D015 Integration tests use stdlib only (no jsonschema) so they run on any CI image.
+- D016 Lane A Phase 0 engine is a JUCE-free C++ core (SineEngine behind IEngine); JUCE audio/MIDI wrapper comes once JUCE can be fetched. EngineAPI.h is DRAFT v0.
+- D017 JUCE wrapper is a console app (src/engine/Phase0Audio.cpp, target openkeys_phase0, only with OPENKEYS_WITH_JUCE=ON); MIDI->engine via lock-free FIFO; JACK+ALSA enabled on Linux (PipeWire works through either).
+- DC1 (C) Lane C tests are Python in CTest: tools/check_presets.py uses jsonschema and exits 77 (skipped) if it is missing; CI installs jsonschema.
+- DC2 (C) instrument.ref in presets is relative to content/sounds/. First preset: content/presets/grand-piano.json (Salamander Grand Piano V3, CC-BY-3.0).
+- DC3 (C) 2026-11-08 CI must pass on Linux, Windows and macOS (continue-on-error removed). The repo setting 'pin actions to SHA' was turned off.
