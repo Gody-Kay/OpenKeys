@@ -16,3 +16,4 @@
 - D014 CI: Linux must be green; Windows and Mac jobs may fail (continue-on-error) until tested by a friend (assumed).
 - D015 Lane C tests are Python (jsonschema) registered in CTest: schema validation and licence check (assumed).
 - 2026-11-06 (C, assumed): instrument.ref is relative to content/sounds/. First preset: content/presets/grand-piano.json.
+- 2026-11-08 (C): removed continue-on-error from ci.yml; all 3 OS were green, so all 3 must stay green.

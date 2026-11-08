@@ -8,8 +8,6 @@ jobs:
   build:
     name: ${{ matrix.os }}
     runs-on: ${{ matrix.os }}
-    # Linux must be green (Phase 0 exit). Windows/Mac may fail until we test them (assumed, see DECISIONS.md).
-    continue-on-error: ${{ matrix.os != 'ubuntu-latest' }}
     strategy:
       fail-fast: false
       matrix:
