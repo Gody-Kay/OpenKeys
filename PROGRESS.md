@@ -38,3 +38,4 @@ Phase 0 not started. No code yet.
 - [C] 2026-11-08 21:17 ci.yml: checkout@v5, setup-python@v6 (Node 20 deprecation). Verify 3 OS still green.
 - [C] 2026-11-08 22:13 Added tools/fetch_salamander.sh, tools/fetch_vsco.sh, docs/SOUNDS.md so sounds can be re-downloaded by anyone. Syntax-checked only; fetch scripts not re-run.
 - [C->B] 2026-11-08 22:23 UI draft on branch ui-draft: src/app/{CMakeLists.txt,Main.cpp,PerformanceScreen.h}. DUMMY data, NOT compiled, NOT run. Needs: build with OPENKEYS_WITH_JUCE=ON, fix errors, then merge. Not connected to engine yet.
+- [C->B] 2026-11-08 23:48 UI draft v2 on ui-draft: 3D hardware look, LCD, LAYERS button opening 16 layer faders, sound name replaces Layer N. Dummy data, not connected to engine. Compile/run NOT yet verified.
