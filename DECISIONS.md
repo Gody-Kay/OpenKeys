@@ -21,3 +21,4 @@
 - DC2 (C) instrument.ref in presets is relative to content/sounds/. First preset: content/presets/grand-piano.json (Salamander Grand Piano V3, CC-BY-3.0).
 - DC3 (C) 2026-11-08 CI must pass on Linux, Windows and macOS (continue-on-error removed). The repo setting 'pin actions to SHA' was turned off.
 - 2026-11-08 (C, assumed) DC5: at the user's request this chat (lane C) wrote the Phase 0 UI draft in src/app, acting as Session B. Lives on branch ui-draft, NOT merged to main until it builds. Montage-style layout with our own names; whole screen, no scrolling (D020).
+- 2026-11-08 (C, assumed) DC6: root CMake enables C as well as CXX (LANGUAGES C CXX), needed by JUCE gui modules. On ui-draft only until the UI builds.
