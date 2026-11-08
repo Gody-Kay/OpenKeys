@@ -12,7 +12,7 @@ errors = []
 for rel in ["SESSION_RULES.md", "PLAN.md", "FEATURES.md", "PROGRESS.md", "DECISIONS.md",
             "CMakeLists.txt", "content/LICENSES.md", "docs/performance.schema.json",
             "docs/example.performance.json", "tools/fetch_sounds.py",
-            "content/sources.json", ".github/workflows/build.yml"]:
+            "content/sources.json", ".github/workflows/ci.yml"]:
     if not (root / rel).is_file():
         errors.append(f"missing file: {rel}")
 
@@ -40,7 +40,7 @@ if schema and perf:
     ids = {p.get("id") for p in parts}
     for s in perf.get("scenes", []):
         for pid in s.get("parts", {}):
-            if pid not in ids:
+            if int(pid) not in ids:
                 errors.append(f"scene {s.get('name')} refers to unknown part {pid}")
     for p in parts:
         z = p.get("zone", {})
