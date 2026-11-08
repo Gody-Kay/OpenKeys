@@ -31,3 +31,4 @@ Phase 0 not started. No code yet.
 - [C] 2026-11-06 17:18 content/presets/grand-piano.json added (Salamander). Ref paths are relative to content/sounds/ (see DECISIONS.md). A: please confirm this resolves in the engine.
 - [C] 2026-11-06 17:20 tools/check_presets.py + ctest presets_valid added. CI still needs pip install jsonschema (pending).
 - [C] 2026-11-06 17:21 CI: ci.yml already mentions jsonschema, left unchanged. Verify presets_valid runs (not skipped) on all 3 OS in the Actions log.
+- [C] 2026-11-08 17:45 Engine Phase 1+2 imported from ~/openkeys into main (branch engine-import). ctest 6/6 pass locally. Engine's own PROGRESS/DECISIONS/FEATURES/setup.sh NOT imported yet. CI on 3 OS not yet checked.
