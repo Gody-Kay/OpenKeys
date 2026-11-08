@@ -13,6 +13,7 @@ Allowed for sounds: CC0, CC-BY, public domain, permissive. Never bundle Yamaha/R
 | Name | Licence | Source URL | Attribution needed | Notes |
 |---|---|---|---|---|
 | Salamander Grand Piano V3 | CC-BY-3.0 | https://github.com/sfzinstruments/SalamanderGrandPiano | Yes: Alexander Holm, CC-BY 3.0 | Yamaha C5, 48kHz/24bit, 16 layers. Cloned commit 3382bf9. Uses SFZ v2 + ARIA extensions: test in sfizz in Phase 1. |
+| VSCO 2 Community Edition (SFZ branch) | CC0-1.0 | https://github.com/sgossner/VSCO-2-CE | Credit requested, not required: Versilian Studios LLC / Sam Gossner | Commit 6dd651d. Strings, brass, woodwinds, percussion, keys. Readme asks not to resell as-is; the CC0 LICENSE governs. |
 
 ## Our own recordings
 Recordings made by the church's engineer are owned by the project (D008). Log each set here with date and who recorded it.
